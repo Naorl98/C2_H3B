@@ -16,7 +16,7 @@ namespace ariel{
     Fraction :: Fraction (int coun, int deno){
         if (deno == 0)
         {
-            throw std :: invalid_argument("Division is zero\n");
+            throw std :: invalid_argument("division is zero");
         }
         if ((coun < std::numeric_limits<int>::min()) || (coun > std::numeric_limits<int>::max()) || ((deno > std::numeric_limits<int>::max() || deno < std::numeric_limits<int>::min()))) {
             throw std::overflow_error("Overflow");
@@ -142,7 +142,7 @@ namespace ariel{
     }
     Fraction Fraction :: operator/(const Fraction &newfrac) const{
         if (newfrac.getNumerator() == 0 || getDenominator() == 0){
-            throw std::overflow_error("division by zero is not defined");
+            throw std::overflow_error("division by zero");
         }
         long long newnumber = (long long)newfrac.getDenominator() * numerator;
         long long ten =(long long) newfrac.getNumerator() * denominator;
@@ -290,8 +290,8 @@ namespace ariel{
     std::istream& operator>>(std::istream& is, Fraction& fraction)
     {
         int num, den;
-        if (!((is) >> num >> den)) {throw runtime_error("Invalid input for Fraction");}
-        if (den == 0) throw runtime_error("Division by zero");
+        if (!((is) >> num >> den)) {throw runtime_error("Invalid input");}
+        if (den == 0) throw runtime_error("division by zero");
         fraction = Fraction(num, den);
         return is;
     }
