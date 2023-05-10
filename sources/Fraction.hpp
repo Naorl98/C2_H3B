@@ -15,10 +15,7 @@ namespace ariel{
         public:
             Fraction();
             Fraction(int , int);
-            Fraction(const Fraction& other);
             Fraction(float);
-            ~Fraction();
-            Fraction& operator=( const Fraction& other);
             int getNumerator() const;
             int getDenominator() const;
             int gcd(int num1, int num2);
