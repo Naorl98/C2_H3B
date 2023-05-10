@@ -13,7 +13,6 @@ namespace ariel{
         this->numerator =1;
         this->denominator =1;
     }
-    Fraction ::~Fraction (){}
     Fraction :: Fraction (int coun, int deno){
         if (deno == 0)
         {
@@ -38,7 +37,6 @@ namespace ariel{
         this->numerator =((int)num) / r;
         this->denominator=ten / r;
     }
-    Fraction :: Fraction (const Fraction& copy):numerator(copy.numerator),denominator(copy.denominator){}
 
     int Fraction::gcd(int a, int b)     // gcd 
     {
@@ -52,11 +50,6 @@ namespace ariel{
         return numerator;
     }
 
-    Fraction& Fraction :: operator=(const Fraction& other){
-        this->denominator = other.getDenominator();
-        this->numerator = other.getNumerator();
-        return *this;
-    }
     Fraction Fraction :: operator+(const Fraction& newfrac) const{
         long long newnumber =(long long)numerator * newfrac.getDenominator() + denominator * newfrac.getNumerator();
         long long ten =  (long long)denominator * newfrac.getDenominator();
